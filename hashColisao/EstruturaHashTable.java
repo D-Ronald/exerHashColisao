@@ -3,17 +3,13 @@ package hashColisao;
 public class EstruturaHashTable implements EstruturaDeDados{
     private Integer tabela[];
     private Integer porao[];
-    //TODO adicionar elementos necessários para implementar o porão
-
     public EstruturaHashTable() {
-        //esse número pode ser alterado
         tabela = new Integer[1000];
         porao = new Integer[100];
     }
 
     @Override
-    public boolean insert(int chave) {
-        // TODO quando inserir, se a posição estiver ocupada, o elemento NÃO é inserido e retorna false. Caso contrário, o elemento é inserido na posição calculada e retorna true.
+    public boolean insert(int chave){
         int posicao = hash(chave);
         
         if (tabela[posicao] == null) {
@@ -37,7 +33,6 @@ public class EstruturaHashTable implements EstruturaDeDados{
 
     @Override
     public boolean delete(int chave) {
-        // TODO quando inserir, se a posição estiver ocupada, torna o elemento da posição como null e retorna true. Caso contrário, retorna false.
         int posicao = search(chave);
         
         if (posicao == -1) {
@@ -56,7 +51,6 @@ public class EstruturaHashTable implements EstruturaDeDados{
 
     @Override
     public int search(int chave) {
-        // TODO se o elemento estiver presente retorna a sua posição. Caso contrário, retorna -1.
         int posicao = hash(chave);
         
         if (tabela[posicao] != null && tabela[posicao] == chave) {
